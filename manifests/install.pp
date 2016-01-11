@@ -73,9 +73,6 @@ class rundeck::install(
   } else {
     ensure_resource('group', $group, { 'ensure' => 'present' } )
     
-    group { 'rundeck':
-      ensure => absent,
-    }
   }
 
   if $user == 'rundeck' {
@@ -83,9 +80,6 @@ class rundeck::install(
   } else {
     ensure_resource('user', $user, { 'ensure' => 'present', 'groups' => [$group] } )
     
-    user { 'rundeck':
-      ensure => absent,
-    }
   }
 
   file { $rdeck_home:
