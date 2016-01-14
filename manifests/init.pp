@@ -64,6 +64,9 @@
 # [*grails_server_url*]
 #  The url used in sending email notifications.
 #
+# [*quartz_threadCount*]
+#  Number of simultanous threads / jobs.
+#
 # [*keystore*]
 #  Full path to the java keystore to be used by Rundeck.
 #
