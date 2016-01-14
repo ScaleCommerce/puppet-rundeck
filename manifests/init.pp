@@ -165,7 +165,7 @@ class rundeck (
   validate_bool($rss_enabled)
   validate_bool($clustermode_enabled)
   validate_string($grails_server_url)
-  validate_integer($quartz_threadCount)
+  validate_string($quartz_threadCount)
   validate_hash($database_config)
   validate_absolute_path($keystore)
   validate_absolute_path($keystore)

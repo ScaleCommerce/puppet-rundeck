@@ -34,7 +34,7 @@ grails.serverURL = "<%= @grails_server_url %>"
 rundeck.clusterMode.enabled = "<%= @clustermode_enabled %>"
 
 <%- if @quartz_threadCount -%>
-quartz.props.threadPool.threadCount = @quartz_threadCount
+quartz.props.threadPool.threadCount = <%= @quartz_threadCount %>
 <%- end -%>
 
 <%- if @file_keystorage_dir %>
