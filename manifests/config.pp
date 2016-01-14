@@ -23,6 +23,7 @@ class rundeck::config(
   $rss_enabled           = $rundeck::rss_enabled,
   $clustermode_enabled   = $rundeck::clustermode_enabled,
   $grails_server_url     = $rundeck::grails_server_url,
+  $quartz_threadCount    = $rundeck::quartz_threadCount,
   $database_config       = $rundeck::database_config,
   $keystore              = $rundeck::keystore,
   $keystore_password     = $rundeck::keystore_password,

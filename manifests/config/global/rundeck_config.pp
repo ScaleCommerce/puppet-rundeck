@@ -12,6 +12,7 @@ class rundeck::config::global::rundeck_config(
   $rss_enabled           = $rundeck::config::rss_enabled,
   $clustermode_enabled   = $rundeck::config::clustermode_enabled,
   $grails_server_url     = $rundeck::config::grails_server_url,
+  $quartz_threadCount    = $rundeck::config::quartz_threadCount,
   $properties_dir        = $rundeck::config::properties_dir,
   $file_keystorage_dir   = $rundeck::config::file_keystorage_dir,
   $user                  = $rundeck::config::user,
