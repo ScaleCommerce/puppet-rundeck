@@ -80,6 +80,7 @@ define rundeck::config::resource_source(
   $mapping_params      = '',
   $use_default_mapping = true,
   $running_only        = true,
+  $project_nodes       = $rundeck::params::project_nodes,
 ) {
 
   include ::rundeck
