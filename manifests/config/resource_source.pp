@@ -139,7 +139,7 @@ define rundeck::config::resource_source(
         ensure  => present,
         owner   => $user,
         group   => $group,
-        require => File[properties_dir],
+        require => File[$properties_dir],
       }
 
       ini_setting { "${name}::resources.source.${number}.config.requireFileExists":
