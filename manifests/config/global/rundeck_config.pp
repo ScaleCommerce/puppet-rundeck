@@ -20,6 +20,7 @@ class rundeck::config::global::rundeck_config(
   $mail_config           = $rundeck::config::mail_config,
   $security_config       = $rundeck::config::security_config,
   $rdeck_config_template = $rundeck::config::rdeck_config_template,
+  $project_nodes         = $rundeck::config::project_nodes,
 ) {
 
   $properties_file = "${properties_dir}/rundeck-config.groovy"
