@@ -135,12 +135,14 @@ define rundeck::config::resource_source(
 
       $file = "${properties_dir}/${name}.${file_extension}"
 
-      file { $file:
-        ensure  => present,
-        owner   => $user,
-        group   => $group,
-        content => template("${module_name}/project_nodes.erb"),
-        require => File[$properties_dir],
+      if($project_nodes != undef) {
+        file { $file:
+          ensure  => present,
+          owner   => $user,
+          group   => $group,
+          content => template("${module_name}/project_nodes.erb"),
+          require => File[$properties_dir],
+        }
       }
 
       ini_setting { "${name}::resources.source.${number}.config.requireFileExists":
