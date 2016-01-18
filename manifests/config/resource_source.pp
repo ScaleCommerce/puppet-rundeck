@@ -139,6 +139,7 @@ define rundeck::config::resource_source(
         ensure  => present,
         owner   => $user,
         group   => $group,
+        content => template("${module_name}/project_nodes.erb"),
         require => File[$properties_dir],
       }
 
