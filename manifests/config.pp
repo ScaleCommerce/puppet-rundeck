@@ -40,6 +40,7 @@ class rundeck::config(
   $acl_policies          = $rundeck::acl_policies,
   $api_policies          = $rundeck::api_policies,
   $rdeck_config_template = $rundeck::rdeck_config_template,
+  $project_nodes         = $rundeck::project_nodes,
 ) inherits rundeck::params {
 
   $framework_config = deep_merge($rundeck::params::framework_config, $rundeck::framework_config)
