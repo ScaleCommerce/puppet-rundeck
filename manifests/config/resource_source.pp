@@ -135,6 +135,13 @@ define rundeck::config::resource_source(
 
       $file = "${properties_dir}/${name}.${file_extension}"
 
+      file { $file:
+        ensure  => present,
+        owner   => $user,
+        group   => $group,
+        require => File["${project_dir}/etc"],
+      }
+
       ini_setting { "${name}::resources.source.${number}.config.requireFileExists":
         ensure  => present,
         path    => $properties_file,
