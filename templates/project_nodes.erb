@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <%- @project_nodes.each do |attribute, value| -%>
-    <node name="master" description="aziethen-master.scalecommerce" tags="master, appserver, cron, php, puppet" hostname="10.6.233.64" osArch="" osFamily="" osName="" osVersion="" username="scjobs"/>
+  <%- @project_nodes.each do |nodename, nodeparams| -%>
+    <node
+      name="<%- nodename -%>"
+      <%- nodeparams.each do |attribute, value| -%>
+        <%- attribute -%>="<%- value -%>""
+      <%- end -%>
   <%- end -%>
 </project>
