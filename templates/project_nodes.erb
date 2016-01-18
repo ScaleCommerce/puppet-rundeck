@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <%- @project_nodes.each do |nodename, nodeparams| -%>
+  <%- project_nodes.each do |nodename, nodeparams| -%>
     <node
       name="<%- nodename -%>"
       <%- nodeparams.each do |attribute, value| -%>
