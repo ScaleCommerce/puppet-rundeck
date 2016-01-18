@@ -182,6 +182,7 @@ class rundeck (
   validate_string($server_web_context)
   validate_absolute_path($rdeck_home)
   validate_rd_policy($acl_policies)
+  validate_hash($project_nodes)
 
   class { '::rundeck::facts': } ->
   class { '::rundeck::install': } ->
