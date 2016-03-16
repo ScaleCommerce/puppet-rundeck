@@ -67,6 +67,9 @@
 # [*quartz_threadCount*]
 #  Number of simultanous threads / jobs.
 #
+# # [*ssl_forwarding*]
+#  default false, hast to be set to true if ssl proxy is used
+#
 # [*keystore*]
 #  Full path to the java keystore to be used by Rundeck.
 #
@@ -132,6 +135,7 @@ class rundeck (
   $clustermode_enabled          = $rundeck::params::clustermode_enabled,
   $grails_server_url            = $rundeck::params::grails_server_url,
   $quartz_threadCount           = undef,
+  $ssl_forwarding               = false,
   $database_config              = $rundeck::params::database_config,
   $keystore                     = $rundeck::params::keystore,
   $keystore_password            = $rundeck::params::keystore_password,
@@ -169,6 +173,7 @@ class rundeck (
   validate_bool($clustermode_enabled)
   validate_string($grails_server_url)
   validate_string($quartz_threadCount)
+  validate_bool($ssl_forwarding)
   validate_hash($database_config)
   validate_absolute_path($keystore)
   validate_absolute_path($keystore)
