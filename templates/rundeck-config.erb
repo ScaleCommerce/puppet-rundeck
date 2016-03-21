@@ -5,6 +5,10 @@ rss.enabled = "<%= @rss_enabled %>"
 rundeck.security.useHMacRequestTokens = <%= @security_config['useHMacRequestTokens'] %>
 rundeck.security.apiCookieAccess.enabled = <%= @security_config['apiCookieAccess'] %>
 
+<%- if @database_config['type'] == 'mysql' -%>
+rundeck.projectsStorageType=db
+<%- end -%>
+
 dataSource {
   dbCreate = "<%= @database_config['dbCreate'] %>"
   url = "<%= @database_config['url'] %>"
@@ -12,7 +16,9 @@ dataSource {
   driverClassName = "<%= @database_config['driverClassName'] %>"
   username = "<%= @database_config['username'] %>"
   password = "<%= @database_config['password'] %>"
+  <%- if @database_config['type'] != 'mysql' -%>
   dialect = "<%= @database_config['dialect'] %>"
+  <%- end -%>
   <%- end -%>
 }
 
