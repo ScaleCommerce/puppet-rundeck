@@ -80,6 +80,7 @@ define rundeck::config::resource_source(
   $mapping_params      = '',
   $use_default_mapping = true,
   $running_only        = true,
+  $resource_file       = undef,
 ) {
 
   include ::rundeck
@@ -133,7 +134,11 @@ define rundeck::config::resource_source(
         }
       }
 
-      $file = "${properties_dir}/${name}.${file_extension}"
+      if ($resource_file) {
+        $file = $resource_file
+      } else {
+        $file = "${properties_dir}/${name}.${file_extension}"
+      }
 
       ini_setting { "${name}::resources.source.${number}.config.requireFileExists":
         ensure  => present,
